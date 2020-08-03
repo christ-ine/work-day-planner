@@ -1,6 +1,15 @@
 
 const today = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 var currentTime = moment();
+const setPlan9am = moment('9:00 am', "hh:mm a");
+const setPlan10am = moment('10:00 am', "hh:mm a")
+const setPlan11am = moment('11:00 am', "hh:mm a")
+const setPlan12pm = moment('12:00 pm', "hh:mm a")
+const setPlan1pm = moment('1:00 pm', "hh:mm a")
+const setPlan2pm = moment('2:00 pm', "hh:mm a")
+const setPlan3pm = moment('3:00 pm', "hh:mm a")
+const setPlan4pm = moment('4:00 pm', "hh:mm a")
+const setPlan5pm = moment('5:00 pm', "hh:mm a")
 
 console.log("today works! " + today);
 var textBox = document.querySelector('.text-box');
@@ -14,9 +23,12 @@ $(document).ready(function() {
     console.log( "ready works!" );
     $('p#currentDay').html("Today is " + today);
     console.log("dataset works! " + plannerHour.dataset.time);
+
+    
+
     $(window).on("unload", saveSettings);
 
-    // compareTimes(); 
+    compareTimes(); 
     loadSettings();
    
 
@@ -50,27 +62,78 @@ function saveSettings() {
 
 function compareTimes() {
 
-    if (currentTime.isAfter(moment('11:00 am', "hh:mm a"))){
-
-        console.log("IT'S AFTERRRR WORKS");
-        var timeData = $('span[data-time = 1100]').text();
-        console.log("span data-time thine works! " + timeData);
-
-        
-        
-        // if (plannerHour.dataset.time < 1100) {
-
-        //     timeData.addClass('.past');
-
-        // } else {
-
-        //     console.log('idk')
-        // }
-
-    
+    if (currentTime.isAfter(setPlan9am)){
+        $('input.text-box9a').addClass('past');
+    } else if (currentTime.isSame(setPlan9am)) {
+        $('input.text-box9a').addClass('present');
     } else {
-        console.log("this is wrong")
+        $('input.text-box9a').addClass('future');
     };
+
+    if (currentTime.isAfter(setPlan10am)){
+        $('input.text-box10a').addClass('past');
+    } else if (currentTime.isSame(setPlan10am)) {
+        $('input.text-box10a').addClass('present');
+    } else {
+        $('input.text-box10a').addClass('future');
+    };
+    
+    if (currentTime.isAfter(setPlan11am)){
+        $('input.text-box11a').addClass('past');
+    } else if (currentTime.isSame(setPlan11am)) {
+        $('input.text-box11a').addClass('present');
+    } else {
+        $('input.text-box11a').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan12pm)){
+        $('input.text-box12p').addClass('past');
+    } else if (currentTime.isSame(setPlan12pm)) {
+        $('input.text-box12p').addClass('present');
+    } else {
+        $('input.text-box12p').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan1pm)){
+        $('input.text-box1p').addClass('past');
+    } else if (currentTime.isSame(setPlan1pm)) {
+        $('input.text-box1p').addClass('present');
+    } else {
+        $('input.text-box1p').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan2pm)){
+        $('input.text-box2p').addClass('past');
+    } else if (currentTime.isSame(setPlan2pm)) {
+        $('input.text-box2p').addClass('present');
+    } else {
+        $('input.text-box2p').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan3pm)){
+        $('input.text-box3p').addClass('past');
+    } else if (currentTime.isSame(setPlan3pm)) {
+        $('input.text-box3p').addClass('present');
+    } else {
+        $('input.text-box3p').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan4pm)){
+        $('input.text-box4p').addClass('past');
+    } else if (currentTime.isSame(setPlan4pm)) {
+        $('input.text-box4p').addClass('present');
+    } else {
+        $('input.text-box4p').addClass('future');
+    };
+
+    if (currentTime.isAfter(setPlan5pm)){
+        $('input.text-box5p').addClass('past');
+    } else if (currentTime.isSame(setPlan4pm)) {
+        $('input.text-box5p').addClass('present');
+    } else {
+        $('input.text-box5p').addClass('future');
+    };
+    
     
 }
 
@@ -79,26 +142,7 @@ function compareTimes() {
 
     
 
-    // window.onload = function () {
-
-    //     // if (localStorage.getItem('.text-box') = textBox.value) {
-    //     //     return;
-    //     // } 
-       
-        
-    //     if (name !== null) $('.text-box').val(textBox.value);
-
-    // }
-
-    // window.onbeforeunload = function() {
-
-    //     textBox.value = localStorage.getItem('.text-box');
-    //     textBox.addEventListener('input', function() {
-    //         localStorage.setItem("plan", textBox.value);
-    //         });
-
-    //     // localStorage.setItem("plan", $('.text-box').val());
-    // }
+    
 
 
 
