@@ -26,7 +26,20 @@ $(document).ready(function() {
 
     
 
-    $(window).on("unload", saveSettings);
+    // $(window).on("unload", saveSettings);
+
+    $('button').on("click", function () {
+        localStorage.plannerInput9a = $('textarea.text-box9a').val();
+        localStorage.plannerInput10a = $('input.text-box10a').val();
+        localStorage.plannerInput11a = $('input.text-box11a').val();
+        localStorage.plannerInput12p = $('input.text-box12p').val();
+        localStorage.plannerInput1p = $('input.text-box1p').val();
+        localStorage.plannerInput2p = $('input.text-box2p').val();
+        localStorage.plannerInput3p = $('input.text-box3p').val();
+        localStorage.plannerInput4p = $('input.text-box4p').val();
+        localStorage.plannerInput5p = $('input.text-box5p').val();
+    })
+    
 
     compareTimes(); 
     loadSettings();
@@ -35,7 +48,7 @@ $(document).ready(function() {
 });
 
 function loadSettings() {
-    $('input.text-box9a').val(localStorage.plannerInput9a);
+    $('textarea.text-box9a').val(localStorage.plannerInput9a);
     $('input.text-box10a').val(localStorage.plannerInput10a);
     $('input.text-box11a').val(localStorage.plannerInput11a);
     $('input.text-box12p').val(localStorage.plannerInput12p);
@@ -47,96 +60,86 @@ function loadSettings() {
 
 }
 
-function saveSettings() {
-    localStorage.plannerInput9a = $('input.text-box9a').val();
-    localStorage.plannerInput10a = $('input.text-box10a').val();
-    localStorage.plannerInput11a = $('input.text-box11a').val();
-    localStorage.plannerInput12p = $('input.text-box12p').val();
-    localStorage.plannerInput1p = $('input.text-box1p').val();
-    localStorage.plannerInput2p = $('input.text-box2p').val();
-    localStorage.plannerInput3p = $('input.text-box3p').val();
-    localStorage.plannerInput4p = $('input.text-box4p').val();
-    localStorage.plannerInput5p = $('input.text-box5p').val();
-}
 
 
 function compareTimes() {
 
-    if (currentTime.isAfter(setPlan9am)){
-        $('input.text-box9a').addClass('past');
-    } else if (currentTime.isSame(setPlan9am)) {
-        $('input.text-box9a').addClass('present');
+    if (currentTime.isBetween(moment('9:00 am', "LT"), moment('10:00 am', "LT"))){
+        $('textarea.text-box9a').addClass('present');
+    } else if (currentTime.isAfter(setPlan9am)) {
+        $('textarea.text-box9a').addClass('past');
     } else {
-        $('input.text-box9a').addClass('future');
+        $('textarea.text-box9a').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan10am)){
-        $('input.text-box10a').addClass('past');
-    } else if (currentTime.isSame(setPlan10am)) {
+    if (currentTime.isBetween(moment('10:00 am', "LT"), moment('11:00 am', "LT"))){
         $('input.text-box10a').addClass('present');
+    } else if (currentTime.isAfter(setPlan10am)) {
+        $('input.text-box10a').addClass('past');
     } else {
         $('input.text-box10a').addClass('future');
     };
-    
-    if (currentTime.isAfter(setPlan11am)){
-        $('input.text-box11a').addClass('past');
-    } else if (currentTime.isSame(setPlan11am)) {
+
+    if (currentTime.isBetween(moment('11:00 am', "LT"), moment('12:00 pm', "LT"))){
         $('input.text-box11a').addClass('present');
+    } else if (currentTime.isAfter(setPlan11am)) {
+        $('input.text-box11a').addClass('past');
     } else {
         $('input.text-box11a').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan12pm)){
-        $('input.text-box12p').addClass('past');
-    } else if (currentTime.isSame(setPlan12pm)) {
+    if (currentTime.isBetween(moment('12:00 pm', "LT"), moment('1:00 pm', "LT"))){
         $('input.text-box12p').addClass('present');
+    } else if (currentTime.isAfter(setPlan12pm)) {
+        $('input.text-box12p').addClass('past');
     } else {
         $('input.text-box12p').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan1pm)){
-        $('input.text-box1p').addClass('past');
-    } else if (currentTime.isSame(setPlan1pm)) {
+    if (currentTime.isBetween(moment('1:00 pm', "LT"), moment('2:00 pm', "LT"))){
         $('input.text-box1p').addClass('present');
+    } else if (currentTime.isAfter(setPlan1pm)) {
+        $('input.text-box1p').addClass('past');
     } else {
         $('input.text-box1p').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan2pm)){
-        $('input.text-box2p').addClass('past');
-    } else if (currentTime.isSame(setPlan2pm)) {
+    if (currentTime.isBetween(moment('2:00 pm', "LT"), moment('3:00 pm', "LT"))){
         $('input.text-box2p').addClass('present');
+    } else if (currentTime.isAfter(setPlan2pm)) {
+        $('input.text-box2p').addClass('past');
     } else {
         $('input.text-box2p').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan3pm)){
-        $('input.text-box3p').addClass('past');
-    } else if (currentTime.isSame(setPlan3pm)) {
+    if (currentTime.isBetween(moment('3:00 pm', "LT"), moment('4:00 pm', "LT"))){
         $('input.text-box3p').addClass('present');
+    } else if (currentTime.isAfter(setPlan3pm)) {
+        $('input.text-box3p').addClass('past');
     } else {
         $('input.text-box3p').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan4pm)){
-        $('input.text-box4p').addClass('past');
-    } else if (currentTime.isSame(setPlan4pm)) {
+    if (currentTime.isBetween(moment('4:00 pm', "LT"), moment('5:00 pm', "LT"))){
         $('input.text-box4p').addClass('present');
+    } else if (currentTime.isAfter(setPlan4pm)) {
+        $('input.text-box4p').addClass('past');
     } else {
         $('input.text-box4p').addClass('future');
     };
 
-    if (currentTime.isAfter(setPlan5pm)){
-        $('input.text-box5p').addClass('past');
-    } else if (currentTime.isSame(setPlan4pm)) {
+    if (currentTime.isBetween(moment('5:00 pm', "LT"), moment('6:00 pm', "LT"))){
         $('input.text-box5p').addClass('present');
+    } else if (currentTime.isAfter(setPlan5pm)) {
+        $('input.text-box5p').addClass('past');
     } else {
         $('input.text-box5p').addClass('future');
     };
-    
-    
-}
 
+
+
+
+}
 
 
 
