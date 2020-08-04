@@ -23,40 +23,37 @@ $(document).ready(function() {
     console.log( "ready works!" );
     $('p#currentDay').html("Today is " + today);
     console.log("dataset works! " + plannerHour.dataset.time);
-
+    compareTimes();
+    loadSettings();
     
 
     // $(window).on("unload", saveSettings);
 
     $('button').on("click", function () {
         localStorage.plannerInput9a = $('textarea.text-box9a').val();
-        localStorage.plannerInput10a = $('input.text-box10a').val();
-        localStorage.plannerInput11a = $('input.text-box11a').val();
-        localStorage.plannerInput12p = $('input.text-box12p').val();
-        localStorage.plannerInput1p = $('input.text-box1p').val();
-        localStorage.plannerInput2p = $('input.text-box2p').val();
-        localStorage.plannerInput3p = $('input.text-box3p').val();
-        localStorage.plannerInput4p = $('input.text-box4p').val();
-        localStorage.plannerInput5p = $('input.text-box5p').val();
-    })
-    
+        localStorage.plannerInput10a = $('textarea.text-box10a').val();
+        localStorage.plannerInput11a = $('textarea.text-box11a').val();
+        localStorage.plannerInput12p = $('textarea.text-box12p').val();
+        localStorage.plannerInput1p = $('textarea.text-box1p').val();
+        localStorage.plannerInput2p = $('textarea.text-box2p').val();
+        localStorage.plannerInput3p = $('textarea.text-box3p').val();
+        localStorage.plannerInput4p = $('textarea.text-box4p').val();
+        localStorage.plannerInput5p = $('textarea.text-box5p').val();
 
-    compareTimes(); 
-    loadSettings();
-   
+});
 
 });
 
 function loadSettings() {
     $('textarea.text-box9a').val(localStorage.plannerInput9a);
-    $('input.text-box10a').val(localStorage.plannerInput10a);
-    $('input.text-box11a').val(localStorage.plannerInput11a);
-    $('input.text-box12p').val(localStorage.plannerInput12p);
-    $('input.text-box1p').val(localStorage.plannerInput1p);
-    $('input.text-box2p').val(localStorage.plannerInput2p);
-    $('input.text-box3p').val(localStorage.plannerInput3p);
-    $('input.text-box4p').val(localStorage.plannerInput4p);
-    $('input.text-box5p').val(localStorage.plannerInput5p);
+    $('textarea.text-box10a').val(localStorage.plannerInput10a);
+    $('textarea.text-box11a').val(localStorage.plannerInput11a);
+    $('textarea.text-box12p').val(localStorage.plannerInput12p);
+    $('textarea.text-box1p').val(localStorage.plannerInput1p);
+    $('textarea.text-box2p').val(localStorage.plannerInput2p);
+    $('textarea.text-box3p').val(localStorage.plannerInput3p);
+    $('textarea.text-box4p').val(localStorage.plannerInput4p);
+    $('textarea.text-box5p').val(localStorage.plannerInput5p);
 
 }
 
@@ -73,80 +70,66 @@ function compareTimes() {
     };
 
     if (currentTime.isBetween(moment('10:00 am', "LT"), moment('11:00 am', "LT"))){
-        $('input.text-box10a').addClass('present');
+        $('textarea.text-box10a').addClass('present');
     } else if (currentTime.isAfter(setPlan10am)) {
-        $('input.text-box10a').addClass('past');
+        $('textarea.text-box10a').addClass('past');
     } else {
-        $('input.text-box10a').addClass('future');
+        $('textarea.text-box10a').addClass('future');
     };
 
     if (currentTime.isBetween(moment('11:00 am', "LT"), moment('12:00 pm', "LT"))){
-        $('input.text-box11a').addClass('present');
+        $('textarea.text-box11a').addClass('present');
     } else if (currentTime.isAfter(setPlan11am)) {
-        $('input.text-box11a').addClass('past');
+        $('textarea.text-box11a').addClass('past');
     } else {
-        $('input.text-box11a').addClass('future');
+        $('textarea.text-box11a').addClass('future');
     };
 
     if (currentTime.isBetween(moment('12:00 pm', "LT"), moment('1:00 pm', "LT"))){
-        $('input.text-box12p').addClass('present');
+        $('textarea.text-box12p').addClass('present');
     } else if (currentTime.isAfter(setPlan12pm)) {
-        $('input.text-box12p').addClass('past');
+        $('textarea.text-box12p').addClass('past');
     } else {
-        $('input.text-box12p').addClass('future');
+        $('textarea.text-box12p').addClass('future');
     };
 
     if (currentTime.isBetween(moment('1:00 pm', "LT"), moment('2:00 pm', "LT"))){
-        $('input.text-box1p').addClass('present');
+        $('textarea.text-box1p').addClass('present');
     } else if (currentTime.isAfter(setPlan1pm)) {
-        $('input.text-box1p').addClass('past');
+        $('textarea.text-box1p').addClass('past');
     } else {
-        $('input.text-box1p').addClass('future');
+        $('textarea.text-box1p').addClass('future');
     };
 
     if (currentTime.isBetween(moment('2:00 pm', "LT"), moment('3:00 pm', "LT"))){
-        $('input.text-box2p').addClass('present');
+        $('textarea.text-box2p').addClass('present');
     } else if (currentTime.isAfter(setPlan2pm)) {
-        $('input.text-box2p').addClass('past');
+        $('textarea.text-box2p').addClass('past');
     } else {
-        $('input.text-box2p').addClass('future');
+        $('textarea.text-box2p').addClass('future');
     };
 
     if (currentTime.isBetween(moment('3:00 pm', "LT"), moment('4:00 pm', "LT"))){
-        $('input.text-box3p').addClass('present');
+        $('textarea.text-box3p').addClass('present');
     } else if (currentTime.isAfter(setPlan3pm)) {
-        $('input.text-box3p').addClass('past');
+        $('textarea.text-box3p').addClass('past');
     } else {
-        $('input.text-box3p').addClass('future');
+        $('textarea.text-box3p').addClass('future');
     };
 
     if (currentTime.isBetween(moment('4:00 pm', "LT"), moment('5:00 pm', "LT"))){
-        $('input.text-box4p').addClass('present');
+        $('textarea.text-box4p').addClass('present');
     } else if (currentTime.isAfter(setPlan4pm)) {
-        $('input.text-box4p').addClass('past');
+        $('textarea.text-box4p').addClass('past');
     } else {
-        $('input.text-box4p').addClass('future');
+        $('textarea.text-box4p').addClass('future');
     };
 
     if (currentTime.isBetween(moment('5:00 pm', "LT"), moment('6:00 pm', "LT"))){
-        $('input.text-box5p').addClass('present');
+        $('textarea.text-box5p').addClass('present');
     } else if (currentTime.isAfter(setPlan5pm)) {
-        $('input.text-box5p').addClass('past');
+        $('textarea.text-box5p').addClass('past');
     } else {
-        $('input.text-box5p').addClass('future');
-    };
-
-
-
-
+        $('textarea.text-box5p').addClass('future')
+    }
 }
-
-
-
-    
-
-    
-
-
-
-
