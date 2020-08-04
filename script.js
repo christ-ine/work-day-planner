@@ -1,4 +1,3 @@
-
 const today = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 var currentTime = moment();
 const setPlan9am = moment('9:00 am', "hh:mm a");
@@ -12,19 +11,18 @@ const setPlan4pm = moment('4:00 pm', "hh:mm a")
 const setPlan5pm = moment('5:00 pm', "hh:mm a")
 
 
-var textBox = document.querySelector('.text-box');
-var saveBtn = document.querySelector('.saveBtn');
-var plannerHour = document.querySelector('.hour');
-
 
 
 $(document).ready(function () {
 
-
+    //display current date and time 
     $('p#currentDay').html("Today is " + today);
+
 
     compareTimes();
     loadSettings();
+
+    //gets user inputs when save button is clicked
 
     $('button').on("click", function () {
         localStorage.plannerInput9a = $('textarea.text-box9a').val();
@@ -41,6 +39,8 @@ $(document).ready(function () {
 
 });
 
+//function to load saved user inputs
+
 function loadSettings() {
     $('textarea.text-box9a').val(localStorage.plannerInput9a);
     $('textarea.text-box10a').val(localStorage.plannerInput10a);
@@ -55,6 +55,9 @@ function loadSettings() {
 }
 
 
+
+
+// function to color code planner based on comparisons between current time and timeblock time
 
 function compareTimes() {
 
