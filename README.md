@@ -1,6 +1,7 @@
 # Work Day Planner
 
 This project creates a day planner color-coded by time.
+* [github.io](https://christ-ine.github.io/work-day-planner/)
 
 ## Description
 
