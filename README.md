@@ -13,7 +13,7 @@ Tutorials, resources, etc
 
 * [DomPizzie](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
 * [W3](https://www.w3schools.com/)
-* [moment] (https://momentjs.com/)
+* [moment.js](https://momentjs.com/)
 * https://stackoverflow.com/questions/39157618/comparing-time-with-momentjs
 * https://stackoverflow.com/questions/17591447/how-to-reload-current-page-without-losing-any-form-data
 * https://stackoverflow.com/questions/40791207/setting-and-getting-localstorage-with-jquery
